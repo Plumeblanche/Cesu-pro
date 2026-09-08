@@ -1,0 +1,348 @@
+* {
+    box-sizing: border-box;
+    }
+
+body {
+margin: 0;
+font-family: -apple-system, BlinkMacSystemFont, “Segoe UI”, sans-serif;
+background: #fff7fa;
+color: #33262b;
+padding-bottom: 82px;
+}
+
+/* EN-TÊTE */
+
+.topbar {
+background: #f4a7c1;
+padding: 18px;
+display: flex;
+justify-content: space-between;
+align-items: center;
+box-shadow: 0 2px 10px #0001;
+}
+
+.topbar h1 {
+margin: 0;
+font-size: 22px;
+}
+
+.topbar p {
+margin: 3px 0 0;
+font-size: 13px;
+opacity: 0.75;
+}
+
+/* CONTENU */
+
+main {
+max-width: 760px;
+margin: auto;
+padding: 16px;
+}
+
+.screen {
+display: none;
+}
+
+.screen.active {
+display: block;
+}
+
+h2 {
+font-size: 20px;
+}
+
+/* NAVIGATION DU MOIS */
+
+.monthbar {
+display: flex;
+align-items: center;
+justify-content: space-between;
+margin-bottom: 12px;
+}
+
+.monthbar h2 {
+margin: 0;
+text-transform: capitalize;
+}
+
+.monthbar button {
+border: 0;
+background: white;
+border-radius: 12px;
+font-size: 28px;
+width: 42px;
+height: 42px;
+}
+
+/* STATISTIQUES */
+
+.stats {
+display: grid;
+grid-template-columns: repeat(3, 1fr);
+gap: 8px;
+}
+
+.card {
+background: white;
+border-radius: 16px;
+padding: 14px;
+margin: 10px 0;
+box-shadow: 0 2px 10px #0000000b;
+}
+
+.stats .card {
+margin: 0;
+}
+
+.card span {
+display: block;
+font-size: 12px;
+color: #806d74;
+}
+
+.card strong {
+font-size: 18px;
+display: block;
+margin-top: 5px;
+}
+
+/* BOUTONS */
+
+.primary,
+.secondary,
+.danger {
+border: 0;
+border-radius: 12px;
+padding: 11px 15px;
+font-weight: 600;
+font-size: 15px;
+}
+
+.primary {
+background: #e98eae;
+color: white;
+}
+
+.secondary {
+background: white;
+border: 1px solid #ead8df;
+color: #5c4850;
+}
+
+.danger {
+background: #f7d8df;
+color: #9c2748;
+}
+
+.full {
+width: 100%;
+margin: 12px 0;
+}
+
+/* CALENDRIER */
+
+.calendar {
+display: grid;
+grid-template-columns: repeat(7, 1fr);
+gap: 5px;
+margin-top: 14px;
+}
+
+.dayName {
+text-align: center;
+font-size: 11px;
+color: #9b858d;
+padding: 5px;
+}
+
+.day {
+min-height: 72px;
+background: white;
+border-radius: 10px;
+padding: 6px;
+font-size: 12px;
+box-shadow: 0 1px 4px #00000008;
+cursor: pointer;
+}
+
+.day.muted {
+opacity: 0.35;
+}
+
+.day.today {
+outline: 2px solid #f4a7c1;
+}
+
+.day .num {
+font-weight: 700;
+}
+
+.event {
+background: #fbe0e9;
+border-radius: 6px;
+padding: 3px;
+margin-top: 4px;
+overflow: hidden;
+white-space: nowrap;
+text-overflow: ellipsis;
+}
+
+/* TITRES DE SECTIONS */
+
+.sectionHead {
+display: flex;
+justify-content: space-between;
+align-items: center;
+}
+
+/* LISTES */
+
+.item {
+background: white;
+border-radius: 14px;
+padding: 14px;
+margin: 9px 0;
+box-shadow: 0 2px 8px #0000000b;
+display: flex;
+justify-content: space-between;
+gap: 10px;
+}
+
+.item h3,
+.item p {
+margin: 0;
+}
+
+.item p {
+font-size: 13px;
+color: #76656c;
+margin-top: 4px;
+}
+
+/* MENU DU BAS */
+
+.bottomnav {
+position: fixed;
+bottom: 0;
+left: 0;
+right: 0;
+background: white;
+border-top: 1px solid #eadfe3;
+display: grid;
+grid-template-columns: repeat(4, 1fr);
+padding: 7px 5px calc(7px + env(safe-area-inset-bottom));
+z-index: 10;
+}
+
+.bottomnav button {
+border: 0;
+background: none;
+color: #806d74;
+font-size: 20px;
+}
+
+.bottomnav button span {
+display: block;
+font-size: 10px;
+margin-top: 2px;
+}
+
+.bottomnav button.active {
+color: #d95f89;
+font-weight: 700;
+}
+
+/* FENÊTRE POP-UP */
+
+.modal {
+position: fixed;
+inset: 0;
+background: #0006;
+display: flex;
+align-items: flex-end;
+justify-content: center;
+z-index: 20;
+}
+
+.modalBox {
+background: white;
+border-radius: 22px 22px 0 0;
+width: 100%;
+max-width: 760px;
+padding: 22px;
+max-height: 90vh;
+overflow: auto;
+position: relative;
+}
+
+.close {
+position: absolute;
+right: 15px;
+top: 12px;
+border: 0;
+background: #f6edf0;
+border-radius: 50%;
+font-size: 24px;
+width: 34px;
+height: 34px;
+}
+
+/* FORMULAIRES */
+
+form label,
+.card label {
+display: block;
+font-size: 13px;
+margin: 10px 0;
+}
+
+input,
+select {
+width: 100%;
+padding: 11px;
+border: 1px solid #e5d8dd;
+border-radius: 10px;
+background: white;
+font-size: 16px;
+margin-top: 5px;
+}
+
+.row {
+display: grid;
+grid-template-columns: 1fr 1fr;
+gap: 10px;
+}
+
+/* ÉLÉMENTS CACHÉS */
+
+.hidden {
+display: none !important;
+}
+
+.small {
+font-size: 12px;
+color: #8b777f;
+}
+
+/* MOBILE */
+
+@media (max-width: 420px) {
+
+.day {
+min-height: 62px;
+}
+
+.event {
+font-size: 10px;
+}
+
+.stats .card {
+padding: 10px;
+}
+
+.card strong {
+font-size: 16px;
+}
+
+}
