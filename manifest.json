@@ -1,0 +1,24 @@
+\{
+“name”: “CESU Planning”,
+“short\_name”: “CESU Planning”,
+“description”: “Planning, clients, heures et revenus pour une activité CESU\.”,
+“start\_url”: “\./”,
+“display”: “standalone”,
+“background\_color”: “\#fff7fa”,
+“theme\_color”: “\#f4a7c1”,
+“lang”: “fr\-FR”,
+“icons”: &#91;
+\{
+“src”: “icons/icon\-192\.png”,
+“sizes”: “192x192”,
+“type”: “image/png”,
+“purpose”: “any maskable”
+\},
+\{
+“src”: “icons/icon\-512\.png”,
+“sizes”: “512x512”,
+“type”: “image/png”,
+“purpose”: “any maskable”
+\}
+&#93;
+\}
