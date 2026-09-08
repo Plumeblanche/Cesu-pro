@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+
+  <rect width="512" height="512" rx="105" fill="#f4a7c1"/>
+
+  <text x="256" y="280" text-anchor="middle"
+
+        font-family="Arial, sans-serif"
+
+        font-size="138" font-weight="bold" fill="white">CESU</text>
+
+  <text x="256" y="375" text-anchor="middle"
+
+        font-family="Arial, sans-serif"
+
+        font-size="58" fill="white">Planning</text>
+
+</svg>
