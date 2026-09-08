@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+
+<html lang="fr">
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>CESU Planning</title>
+
+  <meta name="theme-color" content="#f4a7c1">
+
+  <meta name="apple-mobile-web-app-capable" content="yes">
+
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+
+  <meta name="apple-mobile-web-app-title" content="CESU Planning">
+
+  <link rel="manifest" href="manifest.json">
+
+  <link rel="stylesheet" href="style.css">
+
+  <link rel="apple-touch-icon" href="icons/icon-192.svg">
+
+</head>
+
+<body>
+
+  <header class="topbar">
+
+    <div>
+
+      <h1>CESU Planning</h1>
+
+      <p>Mon planning & mes revenus</p>
+
+    </div>
+
+    <button id="installBtn" class="install-btn" hidden>
+
+      Installer
+
+    </button>
+
+  </header>
+
+  <main>
+
+    <!-- TABLEAU DE BORD -->
+
+    <section id="dashboard" class="page active">
+
+      <div class="month-header">
+
+        <button id="prevMonth">‹</button>
+
+        <h2 id="currentMonth"></h2>
+
+        <button id="nextMonth">›</button>
+
+      </div>
+
+      <div class="stats">
+
+        <div class="stat-card">
+
+          <span>Heures</span>
+
+          <strong id="monthHours">0 h</strong>
+
+        </div>
+
+        <div class="stat-card">
+
+          <span>Interventions</span>
+
+          <strong id="monthInterventions">0</strong>
+
+        </div>
+
+        <div class="stat-card">
+
+          <span>Revenus</span>
+
+          <strong id="monthIncome">0 €</strong>
+
+        </div>
+
+      </div>
+
+      <button id="addInterventionBtn" class="primary-btn">
+
+        + Ajouter une intervention
+
+      </button>
+
+      <div class="calendar-card">
+
+        <div id="calendar"></div>
+
+      </div>
+
+    </section>
+
+    <!-- CLIENTS -->
+
+    <section id="clients" class="page">
+
+      <div class="section-header">
+
+        <div>
+
+          <h2>Mes clients</h2>
+
+          <p>Gérez vos clients CESU</p>
+
+        </div>
+
+        <button id="addClientBtn" class="primary-btn small">
+
+          + Ajouter
+
+        </button>
+
+      </div>
+
+      <div id="clientsList" class="list"></div>
+
+    </section>
+
+    <!-- INTERVENTIONS -->
+
+    <section id="interventions" class="page">
+
+      <div class="section-header">
+
+        <div>
+
+          <h2>Interventions</h2>
+
+          <p>Historique de vos prestations</p>
+
+        </div>
+
+      </div>
+
+      <div id="interventionsList" class="list"></div>
+
+    </section>
+
+    <!-- PARAMÈTRES -->
+
+    <section id="settings" class="page">
+
+      <h2>Paramètres</h2>
+
+      <div class="settings-card">
+
+        <label for="defaultRate">
+
+          Tarif horaire par défaut (€)
+
+        </label>
+
+        <input
+
+          type="number"
+
+          id="defaultRate"
+
+          min="0"
+
+          step="0.01"
+
+        >
+
+        <button id="saveSettingsBtn" class="primary-btn">
+
+          Enregistrer
+
+        </button>
+
+      </div>
+
+      <div class="settings-card">
+
+        <h3>Mes données</h3>
+
+        <button id="exportBtn" class="secondary-btn">
+
+          Exporter mes données
+
+        </button>
+
+        <label class="secondary-btn file-label">
+
+          Importer mes données
+
+          <input type="file" id="importFile" accept=".json" hidden>
+
+        </label>
+
+        <button id="deleteDataBtn" class="danger-btn">
+
+          Supprimer toutes mes données
+
+        </button>
+
+      </div>
+
+    </section>
+
+  </main>
+
+  <!-- NAVIGATION -->
+
+  <nav class="bottom-nav">
+
+    <button class="nav-btn active" data-page="dashboard">
+
+      <span>🏠</span>
+
+      <small>Accueil</small>
+
+    </button>
+
+    <button class="nav-btn" data-page="clients">
+
+      <span>👤</span>
+
+      <small>Clients</small>
+
+    </button>
+
+    <button class="nav-btn" data-page="interventions">
+
+      <span>📅</span>
+
+      <small>Interventions</small>
+
+    </button>
+
+    <button class="nav-btn" data-page="settings">
+
+      <span>⚙️</span>
+
+      <small>Paramètres</small>
+
+    </button>
+
+  </nav>
+
+  <!-- MODALE -->
+
+  <div id="modal" class="modal" hidden>
+
+    <div class="modal-content">
+
+      <button id="closeModal" class="close-btn">
+
+        ×
+
+      </button>
+
+      <div id="modalContent"></div>
+
+    </div>
+
+  </div>
+
+  <script src="app.js"></script>
+
+</body>
+
+</html>
